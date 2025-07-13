@@ -1,0 +1,29 @@
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Database
+*.sqlite3
+
+# Django migrations
+*/migrations/*
+
+# Logs
+*.log
+
+# IDE / Editor folders
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+
+# Environment variables
+.env
