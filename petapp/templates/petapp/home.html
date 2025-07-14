@@ -10,8 +10,18 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
         <a class="navbar-brand" href="/">🐾 Pet Care Management</a>
+        <div>
+            {% if user.is_authenticated %}
+                <span class="text-white me-3">Hi, {{ user.username }}!</span>
+                <a href="{% url 'logout' %}" class="btn btn-outline-light">Logout</a>
+            {% else %}
+                <a href="{% url 'login' %}" class="btn btn-outline-light me-2">Login</a>
+                <a href="{% url 'signup' %}" class="btn btn-light">Sign Up</a>
+            {% endif %}
+        </div>
     </div>
 </nav>
+
 
 <div class="container text-center mt-5">
     <h1 class="display-3 mb-3 fw-bold">🐶 Welcome to Pet Care Management</h1>
@@ -21,6 +31,8 @@
         <a href="/owners/" class="btn btn-info btn-lg">👤 View Owners</a>
         <a href="/appointments/" class="btn btn-warning btn-lg">📅 View Appointments</a>
         <a href="/add-pet/" class="btn btn-primary btn-lg">➕ Add New Pet</a>
+        <a href="/add-appointment/" class="btn btn-secondary btn-lg">➕ Add Appointment</a>
+
     </div>
 </div>
 
