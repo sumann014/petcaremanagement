@@ -2,7 +2,10 @@ services:
   - type: web
     name: petcare
     env: python
-    buildCommand: pip install -r requirements.txt
+    buildCommand: |
+      pip install -r requirements.txt
+      python manage.py makemigrations
+      python manage.py migrate
     startCommand: gunicorn petcare.wsgi
     plan: free
     autoDeploy: true
